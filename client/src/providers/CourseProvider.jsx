@@ -13,7 +13,7 @@ export const CourseProvider = ({ children }) => {
       try {
         setLoading(true)
         const res = await axios.get('/api/course')
-        setCourses(res)
+        setCourses(res.data)
         setLoading(false)
       } catch (e) {
         console.log('error getting courses')

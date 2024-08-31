@@ -1,12 +1,19 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Map, { Marker, NavigationControl } from 'react-map-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import Loading from './Loading'
+import { CourseContext } from '../providers/courseProvider'
+import CourseMarker from './CourseMarker'
 
 export default function GolfMap({ height }) {
   const [mapHeight, setMapHeight] = useState('500px')
   const [initialViewState, setInitialViewState] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  const { courses } = useContext(CourseContext)
+
+  useEffect(() => {
+    console.log(courses)
+  }, [courses])
 
   useEffect(() => {
     setMapHeight(height)
@@ -59,6 +66,7 @@ export default function GolfMap({ height }) {
         mapStyle="mapbox://styles/mapbox/streets-v11"
       >
         {/* render markers */}
+        {courses && courses.map((course) => <CourseMarker course={course} />)}
         <Marker longitude={-122.4} latitude={37.8} color="#4b0fff" />
         <NavigationControl position="top-right" />
       </Map>
