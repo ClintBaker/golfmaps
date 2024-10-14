@@ -21,6 +21,7 @@ export default function GolfMap({ height }) {
 
   useEffect(() => {
     if (navigator.geolocation) {
+      console.log('getting location')
       navigator.geolocation.getCurrentPosition(
         (position) => {
           setInitialViewState({
@@ -66,8 +67,10 @@ export default function GolfMap({ height }) {
         mapStyle="mapbox://styles/mapbox/streets-v11"
       >
         {/* render markers */}
-        {courses && courses.map((course) => <CourseMarker course={course} />)}
-        <Marker longitude={-122.4} latitude={37.8} color="#4b0fff" />
+        {courses &&
+          courses.map((course) => (
+            <CourseMarker key={course._id} course={course} />
+          ))}
         <NavigationControl position="top-right" />
       </Map>
     </div>
