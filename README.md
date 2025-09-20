@@ -178,8 +178,8 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 
 **Your Name**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+- GitHub: [@clintjbaker](https://github.com/clintjbaker)
+- LinkedIn: [Clinton Baker](https://linkedin.com/in/clintjbaker)
 
 ## 🙏 Acknowledgments
 
